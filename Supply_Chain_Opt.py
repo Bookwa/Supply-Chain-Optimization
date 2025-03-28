@@ -2,16 +2,17 @@ import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 import seaborn as sns
+import plotly.express as px
 from sklearn.model_selection import train_test_split
 from sklearn.ensemble import RandomForestRegressor
 from sklearn.metrics import mean_squared_error, mean_absolute_error, r2_score
 from sklearn.preprocessing import StandardScaler
 
 # Load the datasets
-features = pd.read_csv('/Users/alfredoserranofigueroa/Desktop/Github/Supply_Chain_Optimization/features.csv')
-stores = pd.read_csv('/Users/alfredoserranofigueroa/Desktop/Github/Supply_Chain_Optimization/stores.csv')
-test = pd.read_csv('/Users/alfredoserranofigueroa/Desktop/Github/Supply_Chain_Optimization/test.csv')
-train = pd.read_csv('/Users/alfredoserranofigueroa/Desktop/Github/Supply_Chain_Optimization/train.csv')
+features = pd.read_csv('features.csv')
+stores = pd.read_csv('stores.csv')
+test = pd.read_csv('test.csv')
+train = pd.read_csv('train.csv')
 
 #%% Step 2: Data Preprocessing
 # Merging datasets
@@ -103,3 +104,5 @@ fig = px.box(data, x='DayOfWeek', y='Weekly_Sales', title='Sales Distribution by
 fig.update_layout(xaxis_title='Day of the Week', yaxis_title='Weekly Sales')
 fig.show()
 
+
+# %%
